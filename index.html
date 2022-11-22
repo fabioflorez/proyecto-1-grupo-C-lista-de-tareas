@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bayon&family=Inter&display=swap"
+    />
+    <title>Simple Check List</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        SIMPLE <br />
+        CHECK <br />
+        LIST
+      </h1>
+    </header>
+
+    <main>
+      <div class="noise"></div>
+      <div id="Orange" class="gradient animation"></div>
+      <section id="escribirTareas">
+        <form id="formularioTareas" autocomplete="off">
+          <div id="Form">
+            <input
+              type="text"
+              id="tarea"
+              name="tarea"
+              placeholder="Write here..."
+              spellcheck="false"
+              maxlength="60"
+            />
+            <input
+              type="checkbox"
+              id="categoriaImportante"
+              name="categoria"
+              value="importante"
+            />
+            <label for="categoriaImportante" id="NORMAL">NORMAL</label>
+            <button id="SEND" type="submit">SEND</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="ClearMenu">
+        <input type="checkbox" id="SelectAll" />
+        <label for="SelectAll" id="SelectAllLabel">Select All</label>
+        <button type="button" id="DeleteAll"></button>
+        <label for="DeleteAll" id="DeleteAllLab">Clear All</label>
+        <button type="reset" id="eliminarHechas"></button>
+        <label for="eliminarHechas" id="eliminarHechasLab">Clear Selected</label>
+      </section>
+
+      <section id="listaDeTareas">
+      </section>
+    </main>
+
+    <script src="./js/src.js"></script>
+  </body>
+</html>

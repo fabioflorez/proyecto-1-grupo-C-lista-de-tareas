@@ -1,0 +1,422 @@
+/* Reseteo de estilos */
+@import url(normalyze.css);
+
+/* GENERALES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --coolwhite: #fbfbfd;
+  --coolgrey: #2b3031;
+  --coolorange: #fead37;
+  --coolblue: #0071e3;
+  --coolblack: #070e10;
+}
+
+/* GENERALES: BODY */
+
+body {
+  background-color: var(--coolblack);
+  overflow-x: hidden;
+}
+
+body::selection {
+  background: #fead37;
+  color: #ffffff;
+}
+
+/* GENERALES: TEXTOS */
+
+h1 {
+  all: unset;
+  font-family: "Bayon", sans-serif;
+  display: flex;
+  margin-top: 3%;
+  margin-left: 11%;
+  margin-bottom: 2%;
+  color: #ffffff;
+  font-size: 96px;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  user-select: none;
+}
+
+/* GENERALES: INPUTS */
+
+button {
+  cursor: pointer;
+}
+
+input {
+  padding: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+input[type="text"] {
+  all: unset;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.822);
+}
+
+input::selection {
+  background: var(--coolwhite);
+  color: var(--coolblack);
+}
+
+#categoriaImportante {
+  opacity: 0%;
+  margin: 0;
+  background-color: #fff;
+}
+
+
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* FORM */
+
+#Form {
+  display: flex;
+  margin: 1rem;
+  min-height: 3.4rem;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+#Form:hover {
+  box-shadow: -1px 0 13px 1px #fbfbfd9a;
+  border: 1px var(--coolwhite);
+  transform: scale(1.01);
+}
+
+  #tarea {
+    color: hsl(0, 0%, 100%);
+    line-height: 100%;
+    width: 86%;
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+    user-select: none;
+  }
+
+button[type="submit"] {
+  text-align: center;
+  transition: tramsform, box-shadow 0.2s;
+  width: 5%;
+  color: white;
+  border: solid 1px var(--coolwhite);
+  background: transparent;
+  border-radius: 0px 10px 10px 0px;
+  font-family: "Inter", sans-serif;
+  min-width: 3.6rem;
+}
+
+button[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 2px 1px var(--coolwhite);
+  backdrop-filter: blur(10px);
+  margin-left: 1px;
+}
+
+button[type="reset"] {
+  cursor: pointer;
+}
+
+#NORMAL {
+  width: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  transition: transform box-shadow 0.2s;
+  color: var(--coolwhite);
+  min-width: 6.8rem;
+  border: 1px solid var(--coolwhite);
+  z-index: -1;
+}
+
+#NORMAL::selection {
+  user-select: none;
+}
+
+#NORMAL:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 2px 1px var(--coolwhite);
+  margin-right: 2px;
+  border: 1px solid var(--coolwhite);
+  backdrop-filter: blur(10px);
+}
+
+#categoriaImportante {
+  display: none;
+}
+
+/* ANIMACIONES DEL CLICK */
+
+input:checked + #NORMAL {
+  color: var(--coolorange);
+  border: 1px solid var(--coolwhite);
+}
+
+.click {
+  animation-duration: 0.2s;
+  animation-name: click;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1.03);
+  }
+  50% {
+    transform: scale(0.96);
+    opacity: 83%;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* SECTION: CLEAR MENU */
+
+#ClearMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--coolwhite);
+  border-radius: 10px;
+  height: 6.25rem;
+  margin: 1rem;
+  padding: 2rem;
+  padding-top: 1rem;
+  font-family: "Inter", sans-serif;
+  margin-bottom: -2rem;
+}
+
+@media (max-width: 420px) {
+  #ClearMenu {
+    font-size: 0.7rem;
+  }
+}
+
+#SelectAllLabel {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  color: #838383;
+  transition: 0.005s;
+  user-select: none;
+}
+
+#eliminarHechas,
+#DeleteAll {
+  display: none;
+}
+
+#eliminarHechasLab,
+#DeleteAllLab {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  color: #838383;
+  transition: 0.005s;
+  user-select: none;
+}
+
+#eliminarHechasLab:hover,
+#DeleteAllLab:hover {
+  color: var(--coolblue);
+  font-weight: 550;
+}
+
+#SelectAll:checked + label {
+  color: var(--coolblue);
+  font-weight: 550;
+}
+
+#SelectAll {
+  cursor: pointer;
+  display: none;
+}
+
+
+
+
+/* SECTION: LISTA DE TAREAS */
+
+.tarea {
+  display: flex;
+  margin: 1rem;
+  transition: 0.2s;
+  background-color: var(--coolgrey);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.ImpTarea {
+  background-color: var(--coolorange);
+}
+
+.hecha {
+  animation: opacity 0.2s forwards;
+  transform: translateY(-3%) translateX(1%);
+  box-shadow: -4px 4px 4px rgba(59, 59, 59, 0.308);
+}
+
+@keyframes opacity {
+  0% {
+    text-decoration: none;
+    opacity: 100%;
+  }
+  100% {
+    opacity: 77%;
+  }
+}
+
+.tarea:hover {
+  transform: translateY(-2%) translateX(-0.1%);
+  box-shadow: -4px 4px 4px rgba(59, 59, 59, 0.308);
+}
+
+  .tarea > .textoTarea {
+    margin: 0.5rem;
+    overflow: hidden;
+  }
+
+  .tarea > h4 {
+    flex-grow: 2;
+    min-height: 1.3rem;
+  }
+
+  .hecha > h4 {
+    animation: line 0.2s forwards;
+  }
+
+  @keyframes line {
+    0% {
+      text-decoration: none;
+      opacity: 100%;
+    }
+    100% {
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      opacity: 77%;
+    }
+  }
+
+  .tarea > h5 {
+    align-self: center;
+    min-width: 5.5rem;
+  }
+
+  .tarea > input.checkbox,
+  .tareahecha > input.checkbox {
+    /* REST ESTILOS POR DEFECTO DE LOS NAVEGADORES */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    align-self: center;
+    min-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    border: 3px solid white;
+    border-radius: 2rem;
+  }
+
+  .tarea > input.checkbox:checked,
+  .tareahecha > input.checkbox:checked {
+    background: white;
+  }
+
+#listaDeTareas {
+  background-color: var(--coolwhite);
+  border-radius: 10px;
+  min-height: 25rem;
+  padding: 2rem;
+  margin: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+
+
+
+/* BACKGROUND */
+
+@supports (filter: blur()) {
+  @media (min-width: 1366px) and (max-width: 1920px) {
+    @keyframes rotate {
+      0% {
+        opacity: 0%;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 100%;
+        transform: scale(5);
+      }
+    }
+
+    @keyframes rotateinv {
+      0% {
+        opacity: 100%;
+        transform: scale(5);
+      }
+      100% {
+        opacity: 0%;
+        transform: scale(1);
+      }
+    }
+
+    .animation {
+      --speed: 1s;
+      animation: rotate var(--speed) ease-in-out forwards;
+    }
+
+    .animationinv {
+      --speed: 1s;
+      animation: rotateinv var(--speed) ease-in-out forwards;
+    }
+    .gradient {
+      will-change: auto;
+      opacity: 0%;
+      --size: 200px;
+      width: var(--size);
+      height: var(--size);
+      background: var(--coolorange);
+      border-radius: 20rem;
+      position: absolute;
+      top: 16.7rem;
+      left: 10rem;
+      z-index: -90;
+      filter: blur(3rem);
+      overflow: hidden;
+    }
+
+    .noise {
+      mix-blend-mode: multiply;
+      opacity: 60%;
+      background-image: url(./Noise.svg);
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      filter: brightness(80%) contrast(140%);
+    }
+  }
+}
